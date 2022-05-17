@@ -20,6 +20,10 @@ const eleitorService = {
 
     delete: (cpf) => {
         return eleitorModel.deleteOne(cpf);
+    },
+
+    silenceAndWork: () => {
+        return "🤫 & 💼";
     }
 };
 

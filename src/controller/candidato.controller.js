@@ -18,23 +18,23 @@ controller.post('/createCandidato', (request, response) => {
 controller.get('/getCandidato', async (request, response) => {
     // #swagger.tags = ['Candidatos']
     // #swagger.parameters['numero'] = { description: 'Número do candidato.' }
-    // #swagger.summary = 'Retorna todos os candidatos cadastrados'
-    // #swagger.description = 'Retorna todos os candidatos cadastrados'
+    // #swagger.summary = 'Retorna um candidato cadastrado, pelo seu número.'
+    // #swagger.description = 'Retorna todos os candidatos cadastrados.'
     response.send(await candidatoService.getCandidato(request.query));
 });
 
 controller.get('/getAllCandidatos', async (request, response) => {
     // #swagger.tags = ['Candidatos']
-    // #swagger.summary = 'Retorna todos os candidatos cadastrados'
-    // #swagger.description = 'Retorna todos os candidatos cadastrados'
+    // #swagger.summary = 'Retorna todos os candidatos cadastrados.'
+    // #swagger.description = 'Retorna todos os candidatos cadastrados.'
     response.send(await candidatoService.getAll());
 });
 
-controller.put('/updateCandidatos', async (request, response) => {
+controller.put('/updateCandidatos/:numero', async (request, response) => {
     // #swagger.tags = ['Candidatos']
     // #swagger.summary = 'Atualiza informações de um candidato.'
     // #swagger.description = 'Atualiza as informações do candidato, localizando-o através de seu número, repassando os dados necessários. '
-    // #swagger.parameters['matricula'] = { description: 'Número do candidato.' }
+    // #swagger.parameters['numero'] = { description: 'Número do candidato.' }
     /* #swagger.parameters['dados atualizados'] = {
         in: 'body',
         description: 'candidato atualizado.',
@@ -47,8 +47,8 @@ controller.put('/updateCandidatos', async (request, response) => {
 controller.delete('/deleteCandidato', async (request, response) => {
     // #swagger.tags = ['Candidatos']
     // #swagger.parameters['numero'] = { description: 'Número do candidato.' }
-    // #swagger.summary = 'Deleta o candidato cadastrado com o número passado como parâmetro'
-    // #swagger.description = 'Deleta o candidato cadastrado com o número passado como parâmetro'
+    // #swagger.summary = 'Deleta o candidato cadastrado com o número passado como parâmetro.'
+    // #swagger.description = 'Deleta o candidato cadastrado com o número passado como parâmetro.'
     response.send(await candidatoService.delete(request.query));
 });
 

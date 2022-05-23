@@ -50,8 +50,8 @@
         "tags": [
           "Candidatos"
         ],
-        "summary": "Retorna todos os candidatos cadastrados",
-        "description": "Retorna todos os candidatos cadastrados",
+        "summary": "Retorna um candidato cadastrado, pelo seu número.",
+        "description": "Retorna todos os candidatos cadastrados.",
         "parameters": [
           {
             "name": "numero",
@@ -72,8 +72,8 @@
         "tags": [
           "Candidatos"
         ],
-        "summary": "Retorna todos os candidatos cadastrados",
-        "description": "Retorna todos os candidatos cadastrados",
+        "summary": "Retorna todos os candidatos cadastrados.",
+        "description": "Retorna todos os candidatos cadastrados.",
         "parameters": [],
         "responses": {
           "200": {
@@ -82,7 +82,7 @@
         }
       }
     },
-    "/updateCandidatos": {
+    "/updateCandidatos/{numero}": {
       "put": {
         "tags": [
           "Candidatos"
@@ -91,10 +91,11 @@
         "description": "Atualiza as informações do candidato, localizando-o através de seu número, repassando os dados necessários. ",
         "parameters": [
           {
-            "name": "matricula",
-            "description": "Número do candidato.",
-            "in": "query",
-            "type": "string"
+            "name": "numero",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "Número do candidato."
           },
           {
             "name": "dados atualizados",
@@ -118,8 +119,8 @@
         "tags": [
           "Candidatos"
         ],
-        "summary": "Deleta o candidato cadastrado com o número passado como parâmetro",
-        "description": "Deleta o candidato cadastrado com o número passado como parâmetro",
+        "summary": "Deleta o candidato cadastrado com o número passado como parâmetro.",
+        "description": "Deleta o candidato cadastrado com o número passado como parâmetro.",
         "parameters": [
           {
             "name": "numero",
@@ -140,14 +141,17 @@
         "tags": [
           "Eleitores"
         ],
-        "summary": "Retorna todos os eleitores cadastrados",
-        "description": "Retorna todos os eleitores cadastrados",
+        "summary": "Cadastra um novo eleitor no banco de dados.",
+        "description": "Cadastra um novo eleitor no banco de dados.",
         "parameters": [
           {
-            "name": "numero",
-            "description": "Número do eleitor.",
-            "in": "query",
-            "type": "string"
+            "name": "dados do eleitor",
+            "in": "body",
+            "description": "dados do eleitor.",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Eleitor"
+            }
           }
         ],
         "responses": {
@@ -162,12 +166,12 @@
         "tags": [
           "Eleitores"
         ],
-        "summary": "Retorna todos os eleitores cadastrados",
-        "description": "Retorna todos os eleitores cadastrados",
+        "summary": "Retorna um eleitor cadastrado usando sua inscrição.",
+        "description": "Retorna um eleitor cadastrado usando sua inscrição",
         "parameters": [
           {
-            "name": "numero",
-            "description": "Número do eleitor.",
+            "name": "numeroInscricao",
+            "description": "Número de inscrição do eleitor.",
             "in": "query",
             "type": "string"
           }
@@ -184,8 +188,8 @@
         "tags": [
           "Eleitores"
         ],
-        "summary": "Retorna todos os eleitores cadastrados",
-        "description": "Retorna todos os eleitores cadastrados",
+        "summary": "Retorna todos os eleitores cadastrados.",
+        "description": "Retorna todos os eleitores cadastrados.",
         "parameters": [],
         "responses": {
           "200": {
@@ -194,7 +198,7 @@
         }
       }
     },
-    "/updateEleitor": {
+    "/updateEleitor/{numeroInscricao}": {
       "put": {
         "tags": [
           "Eleitores"
@@ -203,10 +207,11 @@
         "description": "Atualiza as informações do eleitor, localizando-o através de seu número, repassando os dados necessários. ",
         "parameters": [
           {
-            "name": "matricula",
-            "description": "Número do eleitor.",
-            "in": "query",
-            "type": "string"
+            "name": "numeroInscricao",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "Número de inscrição do eleitor."
           },
           {
             "name": "dados atualizados",
@@ -230,12 +235,12 @@
         "tags": [
           "Eleitores"
         ],
-        "summary": "Retorna todos os eleitores cadastrados",
-        "description": "Retorna todos os eleitores cadastrados",
+        "summary": "Deleta um eleitor cadastrado, através de seu número de eleitor.",
+        "description": "Deleta um eleitor cadastrado, através de seu número de eleitor.",
         "parameters": [
           {
-            "name": "numero",
-            "description": "Número do eleitor.",
+            "name": "numeroInscricao",
+            "description": "Número de inscrição do eleitor.",
             "in": "query",
             "type": "string"
           }

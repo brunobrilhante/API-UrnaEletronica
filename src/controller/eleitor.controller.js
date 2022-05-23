@@ -4,32 +4,37 @@ const eleitorService = require('../service/eleitor.service');
 
 controller.post('/createEleitor', (request, response) => {
     // #swagger.tags = ['Eleitores']
-    // #swagger.parameters['numero'] = { description: 'Número do eleitor.' }
-    // #swagger.summary = 'Retorna todos os eleitores cadastrados'
-    // #swagger.description = 'Retorna todos os eleitores cadastrados'
+    // #swagger.summary = 'Cadastra um novo eleitor no banco de dados.'
+    // #swagger.description = 'Cadastra um novo eleitor no banco de dados.'
+    /* #swagger.parameters['dados do eleitor'] = {
+        in: 'body',
+        description: 'dados do eleitor.',
+        required: true,
+        schema: { $ref: "#/definitions/Eleitor"}
+    }*/
     response.send(eleitorService.create(request.body));
 });
 
 controller.get('/getEleitor', async (request, response) => {
     // #swagger.tags = ['Eleitores']
-    // #swagger.parameters['numero'] = { description: 'Número do eleitor.' }
-    // #swagger.summary = 'Retorna todos os eleitores cadastrados'
-    // #swagger.description = 'Retorna todos os eleitores cadastrados'
+    // #swagger.parameters['numeroInscricao'] = { description: 'Número de inscrição do eleitor.' }
+    // #swagger.summary = 'Retorna um eleitor cadastrado usando sua inscrição.'
+    // #swagger.description = 'Retorna um eleitor cadastrado usando sua inscrição'
     response.send(await eleitorService.getEleitor(request.query));
 });
 
 controller.get('/getAllEleitores', async (request, response) => {
     // #swagger.tags = ['Eleitores']
-    // #swagger.summary = 'Retorna todos os eleitores cadastrados'
-    // #swagger.description = 'Retorna todos os eleitores cadastrados'
+    // #swagger.summary = 'Retorna todos os eleitores cadastrados.'
+    // #swagger.description = 'Retorna todos os eleitores cadastrados.'
     response.send(await eleitorService.getAll());
 });
 
-controller.put('/updateEleitor', async (request, response) => {
+controller.put('/updateEleitor/:numeroInscricao', async (request, response) => {
     // #swagger.tags = ['Eleitores']
     // #swagger.summary = 'Atualiza informações de um eleitor.'
     // #swagger.description = 'Atualiza as informações do eleitor, localizando-o através de seu número, repassando os dados necessários. '
-    // #swagger.parameters['matricula'] = { description: 'Número do eleitor.' }
+    // #swagger.parameters['numeroInscricao'] = { description: 'Número de inscrição do eleitor.' }
     /* #swagger.parameters['dados atualizados'] = {
         in: 'body',
         description: 'eleitor atualizado.',
@@ -41,9 +46,9 @@ controller.put('/updateEleitor', async (request, response) => {
 
 controller.delete('/deleteEleitor', async (request, response) => {
     // #swagger.tags = ['Eleitores']
-    // #swagger.parameters['numero'] = { description: 'Número do eleitor.' }
-    // #swagger.summary = 'Retorna todos os eleitores cadastrados'
-    // #swagger.description = 'Retorna todos os eleitores cadastrados'
+    // #swagger.parameters['numeroInscricao'] = { description: 'Número de inscrição do eleitor.' }
+    // #swagger.summary = 'Deleta um eleitor cadastrado, através de seu número de eleitor.'
+    // #swagger.description = 'Deleta um eleitor cadastrado, através de seu número de eleitor.'
     response.send(await eleitorService.delete(request.query));
 });
 

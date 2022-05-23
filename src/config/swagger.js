@@ -8,7 +8,7 @@ const doc = {
         title: 'Urna 2022 API',
         description: 'Urna eletrônica - #SeuVotoFazOPais',
         contact: {
-            email: 'storeexodia@gmail.com'            
+            email: 'storeexodia@gmail.com'
         }
     },
     host: 'localhost:8080',
@@ -33,9 +33,14 @@ const doc = {
             email: "leozinho@gmail.com",
             dataNascimento: "16/05/2000",
             zona: "066",
-            secao: "0384", 
-            numeroInscricao: "123456789101"  
-        }       
+            secao: "0384",
+            numeroInscricao: "123456789101",
+            counter: "5555",
+        },
+        Credencial: {
+            cpf: "12332134404",
+            counter: "5555",
+        }
     }
 }
 

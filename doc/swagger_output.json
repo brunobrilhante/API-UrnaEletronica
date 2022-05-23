@@ -161,17 +161,42 @@
         }
       }
     },
+    "/authentication": {
+      "post": {
+        "tags": [
+          "Eleitores"
+        ],
+        "summary": "Autentica o eleitor no banco de dados.",
+        "description": "Autentica o eleitor no banco de dados.",
+        "parameters": [
+          {
+            "name": "dados do eleitor",
+            "in": "body",
+            "description": "dados do eleitor.",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Credencial"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/getEleitor": {
       "get": {
         "tags": [
           "Eleitores"
         ],
-        "summary": "Retorna um eleitor cadastrado usando sua inscrição.",
-        "description": "Retorna um eleitor cadastrado usando sua inscrição",
+        "summary": "Retorna um eleitor cadastrado usando seu cpf.",
+        "description": "Retorna um eleitor cadastrado usando seu cpf",
         "parameters": [
           {
-            "name": "numeroInscricao",
-            "description": "Número de inscrição do eleitor.",
+            "name": "cpf",
+            "description": "Número de cpf do eleitor.",
             "in": "query",
             "type": "string"
           }
@@ -198,7 +223,7 @@
         }
       }
     },
-    "/updateEleitor/{numeroInscricao}": {
+    "/updateEleitor/{cpf}": {
       "put": {
         "tags": [
           "Eleitores"
@@ -207,11 +232,11 @@
         "description": "Atualiza as informações do eleitor, localizando-o através de seu número, repassando os dados necessários. ",
         "parameters": [
           {
-            "name": "numeroInscricao",
+            "name": "cpf",
             "in": "path",
             "required": true,
             "type": "string",
-            "description": "Número de inscrição do eleitor."
+            "description": "Número de cpf do eleitor."
           },
           {
             "name": "dados atualizados",
@@ -236,11 +261,11 @@
           "Eleitores"
         ],
         "summary": "Deleta um eleitor cadastrado, através de seu número de eleitor.",
-        "description": "Deleta um eleitor cadastrado, através de seu número de eleitor.",
+        "description": "Deleta um eleitor cadastrado, através de seu número de cpf.",
         "parameters": [
           {
-            "name": "numeroInscricao",
-            "description": "Número de inscrição do eleitor.",
+            "name": "cpf",
+            "description": "Número de cpf do eleitor.",
             "in": "query",
             "type": "string"
           }
@@ -321,6 +346,23 @@
         "numeroInscricao": {
           "type": "string",
           "example": "123456789101"
+        },
+        "counter": {
+          "type": "string",
+          "example": "5555"
+        }
+      }
+    },
+    "Credencial": {
+      "type": "object",
+      "properties": {
+        "cpf": {
+          "type": "string",
+          "example": "12332134404"
+        },
+        "counter": {
+          "type": "string",
+          "example": "5555"
         }
       }
     }

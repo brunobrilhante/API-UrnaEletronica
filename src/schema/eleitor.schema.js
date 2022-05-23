@@ -10,7 +10,9 @@ const eleitorSchema = new mongoose.Schema({
     dataNascimento: String,
     zona: String,
     secao: String, 
-    numeroInscricao: String   
+    numeroInscricao: String,
+    counter: String,
+    nice: String
 });
 
 const eleitorModel = mongoose.model('Eleitor', eleitorSchema);

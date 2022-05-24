@@ -17,6 +17,9 @@
 
 ## Documentação 📃:
 
+![thumb](./doc/images/Urna-Thumb.png)
+
+
 ### Instalem as dependências antes de iniciar a API. 
 ```javascript  
 npm install 

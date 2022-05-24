@@ -162,6 +162,13 @@ npm start
 ![Update-Img](./doc/images/Eleitores/Put-Eleitores.png)
 - Atualiza as informações de um eleitor. Localizando-a através de seu número de inscrição e passando os dados a serem atualizados. Similar ao cadastro, porém precisando localizar o eleitor. 
 
+
+### 🤫 & 💼 ⬛
+
+#### **Silêncio e Trabalho** : http://localhost:8080/urna/silenceAndWork
+![Silencio&Trabalho](./doc/images/Eleitores/Silencio&Trabalho.png)
+- Silêncio e Trabalho. 🤫 & 💼
+
 ### Suporte 🆘
 
 #### Em casos de dúvidas ou sugestôes entrar em contato com o time exódia através do nosso [email](mailto:storeexodia@gmail.com)!

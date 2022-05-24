@@ -111,7 +111,9 @@ npm start
     dataNascimento: String,
     zona: String,
     secao: String, 
-    numeroInscricao: String 
+    numeroInscricao: String,
+    counter: String,
+    nice: String
 }
 ```
 #### **Validar credencial** : http://localhost:8080/urna/authentication
@@ -125,18 +127,20 @@ npm start
 - Retorna todos os eleitores que estiverem cadastrados no banco de dados. Retorna um `json` que é convertido para um objeto Javascript como no exemplo abaixo: 
 ```javascript 
 {
-  "_id": "628bdbe2c0831fb1301028c3",
-  "nome": "Leopoldo França",
-  "cpf": "12332134404",
-  "estado": "PE",
-  "cidade": "Serra Talhada",
-  "bairro": "Centro",
-  "email": "leozinho@s.com",
-  "dataNascimento": "16/05/2000",
-  "zona": "066",
-  "secao": "0384",
-  "numeroInscricao": "2",
-  "__v": 0
+    "_id": "628d22596f080298029657b8",
+    "nome": "Leopoldo França",
+    "cpf": "12332134404",
+    "estado": "PE",
+    "cidade": "Serra Talhada",
+    "bairro": "Centro",
+    "email": "leozinho@gmail.com",
+    "dataNascimento": "16/05/2000",
+    "zona": "066",
+    "secao": "0384",
+    "numeroInscricao": "123456789101",
+    "counter": "c6157e1efecf1f5718c24397d5961098",
+    "nice": "7f05abfb90f0c7e6abb015995761c058",
+    "__v": 0
 }
 ```
 #### **Retorna um eleitor cadastrado, localizando-a por seu número de inscrição:** http://localhost:8080/urna/getEleitor

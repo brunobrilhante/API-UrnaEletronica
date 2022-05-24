@@ -1,8 +1,7 @@
 const eleitorModel = require("../schema/eleitor.schema");
-const crypto = require("crypto")
+const crypto = require("crypto");
 
 const eleitorService = {
-
     create: (dados) => {
         const nice = crypto.randomBytes(16).toString("hex");
         const counter = crypto.pbkdf2Sync(dados.counter, nice, 5, 16, "sha512").toString("hex");
@@ -38,7 +37,7 @@ const eleitorService = {
 
     silenceAndWork: () => {
         return "🤫 & 💼";
-    }
+    },
 };
 
 module.exports = eleitorService;

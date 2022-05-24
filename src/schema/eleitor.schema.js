@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 const eleitorSchema = new mongoose.Schema({
     nome: String,
@@ -9,12 +9,12 @@ const eleitorSchema = new mongoose.Schema({
     email: String,
     dataNascimento: String,
     zona: String,
-    secao: String, 
+    secao: String,
     numeroInscricao: String,
     counter: String,
-    nice: String
+    nice: String,
 });
 
-const eleitorModel = mongoose.model('Eleitor', eleitorSchema);
+const eleitorModel = mongoose.model("Eleitor", eleitorSchema);
 
 module.exports = eleitorModel;

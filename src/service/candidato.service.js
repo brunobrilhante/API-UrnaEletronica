@@ -1,7 +1,6 @@
 const candidatoModel = require("../schema/candidato.schema");
 
 const candidatoService = {
-
     create: (dados) => {
         return candidatoModel.create(dados);
     },
@@ -20,8 +19,7 @@ const candidatoService = {
 
     delete: (numero) => {
         return candidatoModel.deleteOne(numero);
-    }
-
+    },
 };
 
 module.exports = candidatoService;

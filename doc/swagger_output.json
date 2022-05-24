@@ -223,6 +223,21 @@
         }
       }
     },
+    "/silenceAndWork": {
+      "get": {
+        "tags": [
+          "Eleitores"
+        ],
+        "summary": "Silêncio e Trabalho",
+        "description": "🤫 & 💼",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/updateEleitor/{cpf}": {
       "put": {
         "tags": [

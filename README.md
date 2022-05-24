@@ -41,7 +41,7 @@ npm start
 ``` 
 ## Rotas 🌐:
 
-## Candidatos 🙎‍♂️
+## Candidatos 🧑‍💼
 
 ### POST 🟩
 #### **Cadastrar Candidato** : http://localhost:8080/urna/createCandidato 
@@ -91,7 +91,7 @@ npm start
 ![Update-Img](./doc/images/Candidatos/Put-Candidatos.png)
 - Atualiza as informações do candidato. Localizando ele através de seu número e passando os dados a serem atualizados. Similar ao cadastro, porém precisando localizar o acolhido. 
 
-## Eleitores 🔑
+## Eleitores 👨‍🦱
 
 ### POST 🟩
 #### **Cadastrar eleitor** : http://localhost:8080/urna/createEleitor
@@ -114,6 +114,11 @@ npm start
     numeroInscricao: String 
 }
 ```
+#### **Validar credencial** : http://localhost:8080/urna/authentication
+![PostValidacao-img](./doc/images/Eleitores/PostValidacao-Eleitores.png)
+
+- Recebe o login e a senha passada pelo usuário e faz a validação se está correto retornando ```{ valido: true }``` caso a credencial esteja correta ou ```{ valido: false }``` para incorreta.
+
 ### GET 🟦
 #### **Retorna todos os eleitores cadastrados**: http://localhost:8080/urna/getAllEleitores
 ![GetAll-img](./doc/images/Eleitores/GetAll-Eleitores.png)

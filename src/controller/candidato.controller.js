@@ -12,7 +12,11 @@ controller.post("/createCandidato", (request, response) => {
         required: true,
         schema: { $ref: "#/definitions/Candidato"}
     }*/
-    response.send(candidatoService.create(request.body));
+    response.send(
+        candidatoService.create(request.body).catch((error) => {
+            console.log(`Ocorreu algum erro. Erro: ${error}`);
+        })
+    );
 });
 
 controller.get("/getCandidato", async (request, response) => {
@@ -20,14 +24,22 @@ controller.get("/getCandidato", async (request, response) => {
     // #swagger.parameters['numero'] = { description: 'Número do candidato.' }
     // #swagger.summary = 'Retorna um candidato cadastrado, pelo seu número.'
     // #swagger.description = 'Retorna todos os candidatos cadastrados.'
-    response.send(await candidatoService.getCandidato(request.query));
+    response.send(
+        await candidatoService.getCandidato(request.query).catch((error) => {
+            console.log(`Ocorreu algum erro. Erro: ${error}`);
+        })
+    );
 });
 
 controller.get("/getAllCandidatos", async (request, response) => {
     // #swagger.tags = ['Candidatos']
     // #swagger.summary = 'Retorna todos os candidatos cadastrados.'
     // #swagger.description = 'Retorna todos os candidatos cadastrados.'
-    response.send(await candidatoService.getAll());
+    response.send(
+        await candidatoService.getAll().catch((error) => {
+            console.log(`Ocorreu algum erro. Erro: ${error}`);
+        })
+    );
 });
 
 controller.put("/updateCandidatos/:numero", async (request, response) => {
@@ -41,7 +53,11 @@ controller.put("/updateCandidatos/:numero", async (request, response) => {
         required: true,
         schema: { $ref: "#/definitions/Candidato"}
     }*/
-    response.send(await candidatoService.update(request.params, request.body));
+    response.send(
+        await candidatoService.update(request.params, request.body).catch((error) => {
+            console.log(`Ocorreu algum erro. Erro: ${error}`);
+        })
+    );
 });
 
 controller.delete("/deleteCandidato", async (request, response) => {
@@ -49,7 +65,11 @@ controller.delete("/deleteCandidato", async (request, response) => {
     // #swagger.parameters['numero'] = { description: 'Número do candidato.' }
     // #swagger.summary = 'Deleta o candidato cadastrado com o número passado como parâmetro.'
     // #swagger.description = 'Deleta o candidato cadastrado com o número passado como parâmetro.'
-    response.send(await candidatoService.delete(request.query));
+    response.send(
+        await candidatoService.delete(request.query).catch((error) => {
+            console.log(`Ocorreu algum erro. Erro: ${error}`);
+        })
+    );
 });
 
 module.exports = controller;

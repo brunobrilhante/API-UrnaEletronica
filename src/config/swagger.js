@@ -31,11 +31,6 @@ const doc = {
             cidade: "Serra Talhada",
             bairro: "Centro",
             email: "leozinho@gmail.com",
-            dataNascimento: "16/05/2000",
-            zona: "066",
-            secao: "0384",
-            numeroInscricao: "123456789101",
-            counter: "5555",
         },
         Credencial: {
             cpf: "12332134404",

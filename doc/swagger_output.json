@@ -345,26 +345,6 @@
         "email": {
           "type": "string",
           "example": "leozinho@gmail.com"
-        },
-        "dataNascimento": {
-          "type": "string",
-          "example": "16/05/2000"
-        },
-        "zona": {
-          "type": "string",
-          "example": "066"
-        },
-        "secao": {
-          "type": "string",
-          "example": "0384"
-        },
-        "numeroInscricao": {
-          "type": "string",
-          "example": "123456789101"
-        },
-        "counter": {
-          "type": "string",
-          "example": "5555"
         }
       }
     },

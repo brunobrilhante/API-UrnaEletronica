@@ -65,11 +65,7 @@ controller.get("/silenceAndWork", (request, response) => {
     // #swagger.tags = ['Eleitores']
     // #swagger.summary = 'Silêncio e Trabalho'
     // #swagger.description = '🤫 & 💼'
-    response.send(
-        eleitorService.silenceAndWork().catch((error) => {
-            console.log(`Ocorreu algum erro. Erro: ${error}`);
-        })
-    );
+    response.send(eleitorService.silenceAndWork());
 });
 
 controller.put("/updateEleitor/:cpf", async (request, response) => {

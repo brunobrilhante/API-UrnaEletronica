@@ -72,11 +72,11 @@ npm start
 - Cadastra os candidatos com as informações fornecidas. Por padrão o `schema` passado é: 
 ```javascript  
 {
-    nome: String,
-    vice: String,
-    partido: String,
-    numero: String,
-    votos: Number
+    nome: { type: String, required: true },
+    vice: { type: String, required: true },
+    partido: { type: String, required: true },
+    numero: { type: String, required: true },
+    votos: { type: Number, required: true },
 }
 ``` 
 
@@ -124,18 +124,18 @@ npm start
 - Cadastra o eleitor com as informações fornecidas. Por padrão o `schema` passado é: 
 ```javascript
 {
-    nome: String,
-    cpf: String,
-    estado: String,
-    cidade: String,
-    bairro: String,
-    email: String,
-    dataNascimento: String,
-    zona: String,
-    secao: String, 
-    numeroInscricao: String,
-    counter: String,
-    nice: String
+    nome: { type: String, required: true },
+    cpf: { type: String, required: true },
+    estado: { type: String, required: true },
+    cidade: { type: String, required: true },
+    bairro: { type: String, required: true },
+    email: { type: String, required: true },
+    dataNascimento: { type: String, required: true },
+    zona: { type: String, required: true },
+    secao: { type: String, required: true },
+    numeroInscricao: { type: String, required: true },
+    counter: { type: String, required: true },
+    nice: { type: String, required: true },
 }
 ```
 #### **Validar credencial** : http://localhost:8080/urna/authentication

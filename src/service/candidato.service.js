@@ -23,7 +23,7 @@ const candidatoService = {
 
     getAllVotos: async () => {
         let todosOsVotos = 0;
-        candidatos = await candidatoModel.find().then((candidatos) => votos.map((candidatos) => (todosOsVotos += candidatos.votos)));
+        candidatos = await candidatoModel.find().then((candidatos) => candidatos.map((votos) => (todosOsVotos += votos.votos)));
         return { todosOsVotos };
     },
 };

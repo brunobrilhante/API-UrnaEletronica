@@ -41,6 +41,16 @@ controller.get("/getAllCandidatos", async (request, response) => {
         })
     );
 });
+controller.get("/atualizarVoto", async (request, response) => {
+    // #swagger.tags = ['Candidatos']
+    // #swagger.summary = 'Atualiza o voto do candidato.'
+    // #swagger.description = 'Atualiza o voto do candidato.'
+    response.send(
+        await candidatoService.atualizarVoto(request.params).catch((error) => {
+            console.log(`Ocorreu algum erro. Erro: ${error}`);
+        })
+    );
+});
 
 controller.get("/getAllVotos", async (request, response) => {
     // #swagger.tags = ['Candidatos']

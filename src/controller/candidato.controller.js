@@ -43,6 +43,7 @@ controller.get("/getAllCandidatos", async (request, response) => {
 });
 controller.get("/atualizarVoto", async (request, response) => {
     // #swagger.tags = ['Candidatos']
+    // #swagger.parameters['numero'] = { description: 'Número do candidato.', required: true}
     // #swagger.summary = 'Atualiza o voto do candidato.'
     // #swagger.description = 'Atualiza o voto do candidato.'
     response.send(

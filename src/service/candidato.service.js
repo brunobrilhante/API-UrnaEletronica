@@ -28,8 +28,9 @@ const candidatoService = {
     },
 
     atualizarVoto: async (numero) => {
-        let candidato = await this.getCandidato(numero).then((dados) => (dados.votos += 1));
-        return this.update(numero, candidato);
+        let candidato = await candidatoModel.findOne(numero).then((dados) => (dados));
+        candidato.votos += 1;
+        return candidatoModel.findOneAndUpdate(numero, candidato);
     },
 };
 

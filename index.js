@@ -20,5 +20,5 @@ app.use("/urna", controllerCandidato);
 app.use("/urna", controllerEleitor);
 
 app.listen(porta, () => {
-    console.log(`Servidor executando na porta ${porta}\nAcesse a documentação e teste a API: http://localhost:8080/urna/doc/`);
+    console.log(`Servidor executando na porta ${porta}\nAcesse a documentação e teste a API: http://localhost:${porta}/urna/doc/`);
 });

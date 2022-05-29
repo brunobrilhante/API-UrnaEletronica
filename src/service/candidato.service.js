@@ -20,6 +20,11 @@ const candidatoService = {
     delete: (numero) => {
         return candidatoModel.deleteOne(numero);
     },
+    getAllVotos: async () => {
+        let todosOsVotos = 0;
+        candidatos = await candidatoModel.find().then((votos) => votos.map((votos) => (todosOsVotos += votos.votos)));
+        return { todosOsVotos };
+    },
 };
 
 module.exports = candidatoService;

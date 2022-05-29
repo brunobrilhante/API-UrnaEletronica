@@ -82,6 +82,21 @@
         }
       }
     },
+    "/getAllVotos": {
+      "get": {
+        "tags": [
+          "Candidatos"
+        ],
+        "summary": "Retorna todos os votos.",
+        "description": "Retorna todos os votos.",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/updateCandidatos/{numero}": {
       "put": {
         "tags": [

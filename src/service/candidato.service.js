@@ -20,9 +20,10 @@ const candidatoService = {
     delete: (numero) => {
         return candidatoModel.deleteOne(numero);
     },
+
     getAllVotos: async () => {
         let todosOsVotos = 0;
-        candidatos = await candidatoModel.find().then((votos) => votos.map((votos) => (todosOsVotos += votos.votos)));
+        candidatos = await candidatoModel.find().then((candidatos) => votos.map((candidatos) => (todosOsVotos += candidatos.votos)));
         return { todosOsVotos };
     },
 };

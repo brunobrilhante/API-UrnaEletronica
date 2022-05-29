@@ -330,6 +330,10 @@
           "type": "string",
           "example": "12332134404"
         },
+        "senha": {
+          "type": "string",
+          "example": "123456"
+        },
         "estado": {
           "type": "string",
           "example": "PE"
@@ -355,9 +359,9 @@
           "type": "string",
           "example": "12332134404"
         },
-        "counter": {
+        "senha": {
           "type": "string",
-          "example": "5555"
+          "example": "123456"
         }
       }
     }

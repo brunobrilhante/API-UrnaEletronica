@@ -27,6 +27,7 @@ const doc = {
         Eleitor: {
             nome: "Leopoldo França",
             cpf: "12332134404",
+            senha: "123456",
             estado: "PE",
             cidade: "Serra Talhada",
             bairro: "Centro",
@@ -34,7 +35,7 @@ const doc = {
         },
         Credencial: {
             cpf: "12332134404",
-            counter: "5555",
+            senha: "123456",
         }
     }
 }

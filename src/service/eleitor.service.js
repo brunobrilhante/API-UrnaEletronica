@@ -3,9 +3,9 @@ const crypto = require("crypto");
 
 const eleitorService = {
     create: (dados) => {
-        const nice = crypto.randomBytes(16).toString("hex");
-        const counter = crypto.pbkdf2Sync(dados.counter, nice, 5, 16, "sha512").toString("hex");
-        return eleitorModel.create({ ...dados, nice, counter });
+        const salt = crypto.randomBytes(16).toString("hex");
+        const senha = crypto.pbkdf2Sync(dados.senha, salt, 5, 16, "sha512").toString("hex");
+        return eleitorModel.create({ ...dados, salt, senha });
     },
 
     getEleitor: (cpf) => {
@@ -24,11 +24,10 @@ const eleitorService = {
         return eleitorModel.deleteOne(cpf);
     },
 
-    authenticate: async (senha) => {
-        const credencial = await eleitorModel.findOne({ cpf: senha.cpf }).lean();
-        let senhaHasheada = crypto.pbkdf2Sync(senha.counter, credencial.nice, 5, 16, "sha512").toString("hex");
-
-        if (credencial.counter === senhaHasheada) {
+    authenticate: async (senhaPassada) => {
+        const credencial = await eleitorModel.findOne({ cpf: senhaPassada.cpf }).lean();
+        let senhaHasheada = crypto.pbkdf2Sync(senhaPassada.senha, credencial.salt, 5, 16, "sha512").toString("hex");
+        if (credencial.senha === senhaHasheada) {
             return { valido: true };
         } else {
             return { valido: false };

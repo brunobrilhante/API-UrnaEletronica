@@ -3,6 +3,8 @@ const mongoose = require("mongoose");
 const eleitorSchema = new mongoose.Schema({
     nome: { type: String, required: true },
     cpf: { type: String, required: true },
+    senha: { type: String, require: true },
+    salt: { type: String, require: true },
     estado: { type: String, required: true },
     cidade: { type: String, required: true },
     bairro: { type: String, required: true },

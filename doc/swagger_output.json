@@ -82,7 +82,7 @@
         }
       }
     },
-    "/atualizarVoto": {
+    "/atualizarVoto/{numero}": {
       "get": {
         "tags": [
           "Candidatos"
@@ -92,10 +92,10 @@
         "parameters": [
           {
             "name": "numero",
-            "description": "Número do candidato.",
+            "in": "path",
             "required": true,
-            "in": "query",
-            "type": "string"
+            "type": "string",
+            "description": "Número do candidato."
           }
         ],
         "responses": {

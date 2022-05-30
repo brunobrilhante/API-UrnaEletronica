@@ -105,6 +105,29 @@
         }
       }
     },
+    "/getVoto/{numero}": {
+      "get": {
+        "tags": [
+          "Candidatos"
+        ],
+        "summary": "Atualiza o voto do candidato.",
+        "description": "Atualiza o voto do candidato.",
+        "parameters": [
+          {
+            "name": "numero",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "Número do candidato."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/getAllVotos": {
       "get": {
         "tags": [

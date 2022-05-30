@@ -21,6 +21,11 @@ const candidatoService = {
         return candidatoModel.deleteOne(numero);
     },
 
+    getVoto: async (numero) => {
+        let candidato = await candidatoModel.findOne(numero);
+        return {votos: candidato.votos};
+    },
+
     getAllVotos: async () => {
         let todosOsVotos = 0;
         candidatos = await candidatoModel.find().then((candidatos) => candidatos.map((votos) => (todosOsVotos += votos.votos)));
@@ -28,7 +33,7 @@ const candidatoService = {
     },
 
     atualizarVoto: async (numero) => {
-        let candidato = await candidatoModel.findOne(numero).then((dados) => (dados));
+        let candidato = await candidatoModel.findOne(numero).then((dados) => dados);
         candidato.votos += 1;
         return candidatoModel.findOneAndUpdate(numero, candidato);
     },

@@ -110,15 +110,15 @@
         "tags": [
           "Candidatos"
         ],
-        "summary": "Atualiza o voto do candidato.",
-        "description": "Atualiza o voto do candidato.",
+        "summary": "Votos do candidato.",
+        "description": "Votos do candidato.",
         "parameters": [
           {
             "name": "numero",
             "in": "path",
             "required": true,
             "type": "string",
-            "description": "Número do candidato."
+            "description": "Votos do candidato ."
           }
         ],
         "responses": {

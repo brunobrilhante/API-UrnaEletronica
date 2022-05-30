@@ -93,6 +93,18 @@ npm start
   "votos": 0
 }
 ``` 
+#### **Atualiza os votos do candidato:** http://localhost:8080/urna/getAllVotos
+-  Atualiza os votos do candidato, localizando ele por seu número.
+![GetCandidato-img](./doc/images/Candidatos/AtualizarVoto-Candidatos.png)
+
+#### **Retorna os votos de um candidato:** http://localhost:8080/urna/getAllVotos
+-  Retorna os votos de um candidato, localizando ele por seu número.
+![GetCandidato-img](./doc/images/Candidatos/getVotos-Candidatos.png)
+
+#### **Retorna a soma de todos os votos dos candidatos:** http://localhost:8080/urna/getAllVotos
+-  Retorna a soma de todos os votos dos candidatos.
+![GetCandidato-img](./doc/images/Candidatos/getAllVotos-Candidatos.png)
+
 #### **Retorna um candidato cadastrado, localizando ele pelo seu número:** http://localhost:8080/urna/getCandidato
 -  O retorno é similar ao da rota anterior, porém retorna apenas o objeto que tiver o mesmo número solicitado.
 ![GetCandidato-img](./doc/images/Candidatos/GetOne-Candidatos.png)
